@@ -38,8 +38,8 @@ exports.index = function (req, res, next) {
 exports.admin = function (req, res, next) {
   console.log(req.body);
 
-  var username =  encodeURIComponent(req.body.username);
-  var password =  encodeURIComponent(req.body.password);
+  var username =  req.body.username;
+  var password =  req.body.password;
 
   User.find({ username: username, password: password  }, function (err, users) {
     if (users.length > 0) {
