@@ -35,7 +35,7 @@
     "lodash": "4.17.20",
     "marked": "0.3.18",
     "method-override": "latest",
-    "moment": "2.15.1",
+    "moment": "2.30.1",
     "mongoose": "6.11.3",
     "morgan": "latest",
     "ms": "^0.7.1",
