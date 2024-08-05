@@ -125,9 +125,11 @@ exports.create = function (req, res, next) {
 };
 
 exports.destroy = function (req, res, next) {
-  Todo.findById(encodeURIComponent(req.params.id), function (err, todo) {
+  var id = req.params.id;
+  Todo.findById(id, function (err, todo) {
 
     try {
+
       todo.remove(function (err, todo) {
         if (err) return next(err);
         res.redirect('/');
@@ -153,7 +155,7 @@ exports.edit = function(req, res, next) {
 };
 
 exports.update = function(req, res, next) {
-  let param_id = encodeURIComponent(req.param.id);
+  let param_id = req.param.id;
   Todo.findById(param_id, function (err, todo) {
 
     todo.content    = req.body.content;
